@@ -1,27 +1,27 @@
-# This cask installs the v0.1 release. Later tags replace it from GoReleaser.
+# This cask installs the current release. Later tags replace it from GoReleaser.
 cask "bohurupee" do
-  version "0.1"
+  version "0.1.5"
 
   on_macos do
     on_intel do
-      sha256 "3772f99f013d9a70493deb193483981f215282b58545b5cb2b182bef80718f96"
+      sha256 "bbde20bc0013fc29dc7e48168e4263f1e565032d5c9a746507b26c416e8bfeef"
       url "https://github.com/milon/bohurupee/releases/download/v#{version}/bohurupee_#{version}_darwin_amd64.tar.gz",
           verified: "github.com/milon/bohurupee/"
     end
     on_arm do
-      sha256 "80cfce4d14782dfccf2af44ee08b52e49f17d596946da164c08ef0bf3ad922c6"
+      sha256 "6a25de0a9324d3581d90013715f695c900de0aefb0ef7324e694e54deef5c2eb"
       url "https://github.com/milon/bohurupee/releases/download/v#{version}/bohurupee_#{version}_darwin_arm64.tar.gz",
           verified: "github.com/milon/bohurupee/"
     end
   end
   on_linux do
     on_intel do
-      sha256 "51fb58a610dfaa0d6d649e87fa8386280b1b24c8b1581f1ae556faaae89f5a20"
+      sha256 "abdfc2f231e80842293bafde36225f6db38a4b2a09a1d159bce0000b18ed7e39"
       url "https://github.com/milon/bohurupee/releases/download/v#{version}/bohurupee_#{version}_linux_amd64.tar.gz",
           verified: "github.com/milon/bohurupee/"
     end
     on_arm do
-      sha256 "0182a912b21352ac8ec2e03aef7222d96928c2e71818af3fd1739bf7710e376a"
+      sha256 "f4f33d2295d0c170cffa0c52087edba69c27580a512be0b5e4e598dfc92ab337"
       url "https://github.com/milon/bohurupee/releases/download/v#{version}/bohurupee_#{version}_linux_arm64.tar.gz",
           verified: "github.com/milon/bohurupee/"
     end
@@ -30,6 +30,10 @@ cask "bohurupee" do
   name "bohurupee"
   desc "Local fake identity provider for OAuth and OIDC development. DEV ONLY."
   homepage "https://github.com/milon/bohurupee"
+
+  livecheck do
+    skip "Auto-generated on release."
+  end
 
   binary "bohurupee"
 
